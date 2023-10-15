@@ -1,0 +1,59 @@
+.body,html{
+    background-color: #353b6d;
+}
+.movie{
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    position: relative;
+    z-index: 2;
+}
+.movie-detail{
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    position: absolute;
+    z-index: 6;
+    bottom: 47px;
+}
+.container{
+    font-size: 13px;
+    margin-right: 5px;
+    margin-top: 30px;
+    /* position: relative; */
+    /* z-index: 2; */
+}
+.movie-card{
+    width: 170px;
+    height: 300px;
+    position: relative;
+    background-color: #515d8a;
+    color: white;
+    margin-bottom: 20px;
+}
+.movie-poster{
+    width: 170px;
+    height: 250px;
+}
+.movie-info{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 5px;
+    padding-left: 3px;
+    padding-right: 5px;
+}
+.detail-card{
+    position: relative;
+    width: 170px;
+    height: 300px;
+    margin-bottom: 20px;
+    font-size: 10px;
+    color: white;
+    background-color: #505050;
+}
+.detail-container{
+    /* font-size: 13px; */
+    margin-right: 5px;
+    margin-top: 30px;
+    /* position: absolute; */
+    /* z-index: 6;
+    bottom: 47px; */
+}
