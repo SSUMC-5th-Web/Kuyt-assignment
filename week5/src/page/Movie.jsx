@@ -53,7 +53,7 @@ const Movie = ({poster_path, title, vote_average, overview}) => {
       setDetail(false);
   }
   return (
-    <Container onMouseEnter={showDetail}>
+    <Container onMouseEnter={showDetail} onMouseLeave={hideDetail}>
       <MovieCard>
         <MoviePoster className='movie-poster' src={poster_path} alt='영화 포스터 대체'/>
         <MovieInfo className='movie-info'>
@@ -62,7 +62,7 @@ const Movie = ({poster_path, title, vote_average, overview}) => {
         </MovieInfo>
       </MovieCard>
       {detail&&(
-        <MovieDetailCard className='detail-container' onMouseLeave={hideDetail}>
+        <MovieDetailCard className='detail-container'>
           <h1>{title}</h1>
           <span>{overview}</span>
         </MovieDetailCard>
