@@ -1,15 +1,8 @@
-import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from "styled-components";
+import LoginControl from './LoginControl';
 
-const Navigation = () => {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const handleLoginClick =() =>{
-        setIsLoggedIn(true);
-    }
-    const handleLogoutClick =() =>{
-        setIsLoggedIn(false);
-    }
+const Navigation = ({setAuth, log, setLog}) => {
     const list = [
         '영화',
         'TV 프로그램',
@@ -30,6 +23,8 @@ const Navigation = () => {
             case '인물':
                 navigate('/celebirity');
                 break;
+            default:
+                break;
         }
     }
   return (
@@ -43,16 +38,7 @@ const Navigation = () => {
         <Ul>
             {list.map((list)=>(<Li onClick={()=>movePage(list)}>{list}</Li>))}
         </Ul>
-        {isLoggedIn?
-            <div>
-                <Button onClick={handleLogoutClick}>로그아웃</Button>
-                <Message>환영합니다!</Message>
-            </div>
-            :
-            <div>
-                <Button onClick={handleLoginClick}>로그인</Button>
-                <Message>로그인 해주세요!</Message>
-            </div>}
+       <LoginControl setAuth={setAuth} log={log} setLog={setLog}/>
         
     </NavWrapper>
   )
@@ -78,22 +64,6 @@ const Li= styled.li`
 const Img = styled.img`
     margin-left: 100px;
     cursor: pointer;
-`;
-const Button = styled.button`
-    cursor: pointer;
-    width: 80px;
-    background-color: white;
-    border: none;
-    border-radius: 30px;
-    padding: 3px;
-    margin-right: 20px;
-    &:hover{
-        background-color: #7878AA;
-        color: white;
-    }
-`;
-const Message = styled.span`
-    color: white;
 `;
 
 export default Navigation

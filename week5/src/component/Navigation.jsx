@@ -68,6 +68,8 @@ const Navigation = () => {
             case '인물':
                 navigate('/celebirity');
                 break;
+            default:
+                break;
         }
     }
   return (
