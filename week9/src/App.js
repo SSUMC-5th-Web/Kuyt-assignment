@@ -7,7 +7,7 @@ const App = () => {
   const [allow, setAllow] = useState(true);
   const [loading, setLoading] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
-  const [userNanme, setUserName] = useState('');
+  const [userName, setUserName] = useState('');
 
   const onChangeID =(e) =>{
     setID(e.target.value);
@@ -71,7 +71,7 @@ const App = () => {
   return (
     <>
     {isLogin?
-      <div>{userNanme}님 환영합니다!</div>
+      <div>{userName}님 환영합니다!</div>
       :
       <div>
         <form>
