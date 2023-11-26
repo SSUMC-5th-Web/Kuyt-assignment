@@ -32,6 +32,7 @@ const App = () => {
   //     weatherData(location);
   //   }
   // },[location])
+
   const [id, setID] = useState('');
   const [pw, setPW] = useState('');
   const [allow, setAllow] = useState(true);
@@ -47,13 +48,16 @@ const App = () => {
     e.preventDefault();
     if(id===""||pw===""){
       alert("로그인 정보를 제대로 입력해주세요.");
-      e.preventDefault();
+      // e.preventDefault();
     }
     try{
       setAllow(false);
       
       const res = await axios.post('/user/login',{ id, pw });
       console.log(res);
+      const { AccessToken, userId } = res.data.result;
+      localStorage.setItem("token", AccessToken);
+      localStorage.setItem("id", userId);
 
       setLoading(true);
       setTimeout(()=>{
